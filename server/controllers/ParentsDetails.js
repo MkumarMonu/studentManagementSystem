@@ -10,14 +10,13 @@ const { convertSecondsToDuration } = require("../utils/secToDuration");
 // Method for updating a profile
 exports.updateParentsDetails = async (req, res) => {
   try {
-    const {
-      fatherName = "",
-      motherName = "",
-      contactNumber = "",
-      email = "",
-      address = "",
-    } = req.body;
     const id = req.user.id;
+
+    const { fatherName, motherName, contactNumber, email, address } = req.body;
+
+    if (!fatherName || !motherName || !contactNumber || !email || !address) {
+      return res.status(400).json({ message: "Please fill all the fields" });
+    }
 
     // Find the profile by id
     const userDetails = await User.findById(id);

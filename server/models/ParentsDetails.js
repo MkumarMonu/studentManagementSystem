@@ -2,25 +2,29 @@ const mongoose = require("mongoose");
 
 // Define the Profile schema
 const parentsDetailsSchema = new mongoose.Schema({
-	fatherName: {
-		type: String,
-	},
-	motherName: {
-		type: String,
-	},
-	contactNumber: {
-		type: Number,
-		trim: true,
-	},
-	email: {
-		type: String,
-		trim: true,
-	},
-		address: {
-		type: String,
-		trim: true,
-	},
-
+  fatherName: {
+    type: String,
+    required: true,
+  },
+  motherName: {
+    type: String,
+    required: true,
+  },
+  contactNumber: {
+    type: Number,
+    required: true,
+    trim: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  address: {
+    type: String,
+    required: true,
+    trim: true,
+  },
 });
 
 // Export the Profile model
