@@ -26,14 +26,14 @@ const userSchema = new mongoose.Schema(
       trim: true,
     },
     class: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Class",
       required: true,
-      trim: true,
     },
     section: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Section",
       required: true,
-      trim: true,
     },
     gender: {
       type: String,
